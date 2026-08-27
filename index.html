@@ -18,7 +18,6 @@
             --green: #2ecc71;
             --red: #e74c3c;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-dark);
@@ -30,7 +29,6 @@
             align-items: center;
             min-height: 100vh;
         }
-
         nav {
             width: 100%;
             background-color: var(--panel-bg);
@@ -41,7 +39,6 @@
             top: 0;
             z-index: 1000;
         }
-
         .nav-container {
             width: 100%;
             max-width: 1000px;
@@ -51,7 +48,6 @@
             padding: 15px 20px;
             box-sizing: border-box;
         }
-
         .logo {
             color: var(--gold);
             font-weight: bold;
@@ -59,12 +55,10 @@
             letter-spacing: 2px;
             text-decoration: none;
         }
-
         .nav-links {
             display: flex;
             gap: 20px;
         }
-
         .nav-btn {
             background: none;
             border: none;
@@ -77,46 +71,38 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
         .nav-btn:hover, .nav-btn.active {
             color: var(--gold);
             background: rgba(212, 175, 55, 0.05);
             border-bottom: 2px solid var(--gold);
             border-radius: 4px 4px 0 0;
         }
-
         .main-content {
             width: 100%;
             max-width: 1000px;
             padding: 40px 20px;
             box-sizing: border-box;
         }
-
         .tab-content {
             display: none;
         }
-
         .tab-content.active {
             display: block;
             animation: fadeIn 0.5s ease;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         h1, h2, h3 {
             color: var(--gold);
             letter-spacing: 1px;
         }
-
         h1 {
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 10px;
         }
-
         .subtitle {
             text-align: center;
             color: var(--text-muted);
@@ -124,7 +110,6 @@
             letter-spacing: 2px;
             margin-bottom: 40px;
         }
-
         .card {
             background-color: var(--panel-card);
             border: 1px solid var(--border);
@@ -133,49 +118,29 @@
             margin-bottom: 25px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
-
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
         }
-
         .item-row {
             display: flex;
             justify-content: space-between;
             padding: 12px 0;
             border-bottom: 1px solid rgba(255,255,255,0.03);
         }
-
         .price {
             color: var(--gold);
             font-weight: bold;
         }
-
-        ul.styled-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul.styled-list li {
-            padding: 12px;
-            background: rgba(212, 175, 55, 0.03);
-            border-left: 4px solid var(--gold);
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-        }
-
         .form-group {
             margin-bottom: 20px;
         }
-
         .form-group label {
             display: block;
             margin-bottom: 8px;
             color: var(--gold);
         }
-
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 12px;
@@ -186,7 +151,6 @@
             box-sizing: border-box;
             font-size: 1rem;
         }
-
         .btn-submit {
             width: 100%;
             padding: 15px;
@@ -201,19 +165,16 @@
             letter-spacing: 1px;
             transition: all 0.3s ease;
         }
-
         .btn-submit:hover {
             background: linear-gradient(135deg, var(--gold-hover), var(--gold));
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
-
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-top: 30px;
         }
-
         .feature-card {
             background: rgba(255,255,255,0.01);
             border: 1px solid rgba(212, 175, 55, 0.05);
@@ -221,25 +182,21 @@
             text-align: center;
             border-radius: 6px;
         }
-
         .feature-card strong {
             display: block;
             color: var(--gold);
             margin-bottom: 10px;
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
         }
-
         th, td {
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
-
         th {
             color: var(--gold);
             background-color: rgba(212, 175, 55, 0.02);
@@ -304,3 +261,150 @@
                 <div class="card">
                     <h3>⚙️ Fertigungsbedarf</h3>
                     <div class="item-row"><span>Hülsen</span><span class="price">80$</span></div>
+                    <div class="item-row"><span>Schwarzpulver</span><span class="price">80$</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BESTELLUNG -->
+        <div id="bestellung" class="tab-content">
+            <h1>AUFTRAGS-ZENTRALE</h1>
+            <div class="subtitle">Logistik-Auftrag direkt an Discord senden</div>
+
+            <div class="card">
+                <form id="orderForm" onsubmit="sendToDiscord(event)">
+                    <div class="form-group">
+                        <label for="name">Name / Fraktion / Unternehmen:</label>
+                        <input type="text" id="name" required placeholder="z.B. LSPD, FIB, oder Privatfirma">
+                    </div>
+                    <div class="form-group">
+                        <label for="product">Gewünschtes Produkt:</label>
+                        <select id="product" required>
+                            <option value="">-- Bitte wählen --</option>
+                            <option value="Zertifizierte Schutzweste (3.500$)">Zertifizierte Schutzweste (3.500$)</option>
+                            <option value="Schutzplatte (1.200$)">Schutzplatte (1.200$)</option>
+                            <option value="Eisen (120$)">Eisen (120$)</option>
+                            <option value="Metall (140$)">Metall (140$)</option>
+                            <option value="Carbon (120$)">Carbon (120$)</option>
+                            <option value="Aramidfasern (80$)">Aramidfasern (80$)</option>
+                            <option value="Eisenerz (80$)">Eisenerz (80$)</option>
+                            <option value="Hülsen (80$)">Hülsen (80$)</option>
+                            <option value="Schwarzpulver (80$)">Schwarzpulver (80$)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Menge (Stückzahl):</label>
+                        <input type="number" id="amount" min="1" required placeholder="z.B. 100">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Lieferort / Besondere Anmerkungen:</label>
+                        <textarea id="location" rows="3" placeholder="z.B. Hauptquartier Nord, diskrete Übergabe gewünscht"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit" id="submitBtn">Bestellung absenden</button>
+                </form>
+            </div>
+
+            <div id="statusBox" class="card" style="display: none; text-align: center;">
+                <h3 id="statusTitle"></h3>
+                <p id="statusMessage"></p>
+            </div>
+        </div>
+
+        <!-- INTERN -->
+        <div id="intern" class="tab-content">
+            <h1>INTERNES MANAGEMENT</h1>
+            <div class="subtitle">Nur für Mitarbeiter von S1nnex Industries</div>
+            <div class="card">
+                <h2>📊 Gewinnspannen &amp; Ankaufkontrolle</h2>
+                <p>Achtung Logistiker: Beim Ankauf von Zulieferern sind strikt die maximalen Ankaufspreise einzuhalten!</p>
+                <table>
+                    <thead><tr><th>Material</th><th>Max. Ankauf</th><th>Verkauf</th><th>Marge</th></tr></thead>
+                    <tbody>
+                        <tr><td>Schutzplatten</td><td>1.000\$</td><td>1.200</td><td style="color:var(--green)">+ 200</td></tr>
+                        <tr><td>Eisen</td><td>100\$</td><td>120</td><td style="color:var(--green)">+ 20</td></tr>
+                        <tr><td>Metall</td><td>120\$</td><td>140</td><td style="color:var(--green)">+ 20</td></tr>
+                        <tr><td>Carbon</td><td>100\$</td><td>120</td><td style="color:var(--green)">+ 20</td></tr>
+                        <tr><td>Eisenerz</td><td>60\$</td><td>80</td><td style="color:var(--green)">+ 20</td></tr>
+                        <tr><td>Aramidfasern</td><td>60\$</td><td>80</td><td style="color:var(--green)">+ 20</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            document.getElementById('btn-' + tabId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function sendToDiscord(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const statusBox = document.getElementById('statusBox');
+            const statusTitle = document.getElementById('statusTitle');
+            const statusMessage = document.getElementById('statusMessage');
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Wird gesendet...";
+
+            const webhookUrl = "https://discordapp.com/api/webhooks/1542487168914686022/--MFL7b6aHol-nW_gfMKzfSgvmngfC1U6BVrbTjJWJvOyG3trc8FSgz5b39AhXublx9Z"; 
+
+            const name = document.getElementById('name').value;
+            const product = document.getElementById('product').value;
+            const amount = document.getElementById('amount').value;
+            const location = document.getElementById('location').value || 'Keine Angabe';
+
+            const discordPayload = {
+                embeds: [{
+                    title: "📦 NEUER LOGISTIKAUFTRAG – S1NNEX INDUSTRIES",
+                    color: 13937463,
+                    fields: [
+                        { name: "👤 Kunde / Fraktion", value: name, inline: true },
+                        { name: "📦 Gewünschte Ware", value: `${amount}x ${product}`, inline: true },
+                        { name: "📍 Lieferort / Details", value: location, inline: false },
+                        { name: "⏱ Status", value: "⏳ Wartet auf Zuweisung eines Fahrers", inline: false }
+                    ],
+                    timestamp: new Date().toISOString(),
+                    footer: { text: "S1nnex Industries Logistik-Zentrale" }
+                }]
+            };
+
+            fetch(webhookUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(discordPayload)
+            })
+            .then(response => {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Bestellung absenden";
+                statusBox.style.display = "block";
+
+                if (response.ok) {
+                    statusBox.style.borderColor = "var(--green)";
+                    statusTitle.style.color = "var(--green)";
+                    statusTitle.innerText = "✔ Erfolgreich gesendet!";
+                    statusMessage.innerText = "Deine Bestellung wurde direkt an die Disposition von S1nnex Industries übermittelt.";
+                    document.getElementById('orderForm').reset();
+                } else {
+                    throw new Error("Fehler beim Senden");
+                }
+            })
+            .catch(error => {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Bestellung absenden";
+                statusBox.style.display = "block";
+                statusBox.style.borderColor = "var(--red)";
+                statusTitle.style.color = "var(--red)";
+                statusTitle.innerText = "❌ Übertragungsfehler";
+                statusMessage.innerText = "Die Bestellung konnte nicht gesendet werden. Überprüfe den Webhook-Kanal in Discord.";
+            });
+        }
+    </script>
+</body>
+</html>
