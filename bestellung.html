@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestellung | S1NNEX INDUSTRIES</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">S1NNEX INDUSTRIES</a>
+
+    <nav>
+        <a href="index.html">ÜBERSICHT</a>
+        <a href="katalog.html">KATALOG</a>
+        <a class="active" href="bestellung.html">BESTELLUNG</a>
+        <a href="intern.html">INTERN</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="page-title">
+        <h1>NEUE BESTELLUNG</h1>
+        <p>GEBEN SIE IHRE LIEFERANFRAGE EIN</p>
+    </section>
+
+    <section class="form-card">
+
+        <form id="orderForm">
+
+            <div class="form-section">
+                <h2>👤 Kundendaten</h2>
+
+                <div class="form-grid">
+
+                    <div>
+                        <label for="company">
+                            Firma / Organisation *
+                        </label>
+
+                        <input
+                            id="company"
+                            name="company"
+                            type="text"
+                            maxlength="100"
+                            required
+                            placeholder="Muster GmbH"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="contact">
+                            Ansprechpartner *
+                        </label>
+
+                        <input
+                            id="contact"
+                            name="contact"
+                            type="text"
+                            maxlength="100"
+                            required
+                            placeholder="Max Mustermann"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="email">
+                            E-Mail *
+                        </label>
+
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            maxlength="150"
+                            required
+                            placeholder="kontakt@firma.de"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="phone">
+                            Telefon
+                        </label>
+
+                        <input
+                            id="phone"
+                            name="phone"
+                            type="tel"
+                            maxlength="40"
+                            placeholder="+49 ..."
+                        >
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-section">
+
+                <h2>📦 Lieferung</h2>
+
+                <div class="form-grid">
+
+                    <div>
+                        <label for="product">
+                            Produkt / Dienstleistung *
+                        </label>
+
+                        <select id="product" name="product" required>
+                            <option value="">Bitte auswählen</option>
+                            <option>Industriegüter</option>
+                            <option>Baumaterialien</option>
+                            <option>Werkzeuge</option>
+                            <option>Transport</option>
+                            <option>Industrieversorgung</option>
+                            <option>Rahmenvertrag</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="quantity">
+                            Menge *
+                        </label>
+
+                        <input
+                            id="quantity"
+                            name="quantity"
+                            type="number"
+                            min="1"
+                            max="999999"
+                            required
+                            placeholder="100"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="date">
+                            Gewünschter Liefertermin *
+                        </label>
+
+                        <input
+                            id="date"
+                            name="date"
+                            type="date"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="priority">
+                            Priorität
+                        </label>
+
+                        <select id="priority" name="priority">
+                            <option value="normal">Normal</option>
+                            <option value="hoch">Hoch</option>
+                            <option value="dringend">Dringend</option>
+                        </select>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="form-section">
+
+                <h2>📍 Lieferadresse</h2>
+
+                <div class="form-grid">
+
+                    <div>
+                        <label for="street">
+                            Straße / Hausnummer *
+                        </label>
+
+                        <input
+                            id="street"
+                            name="street"
+                            type="text"
+                            maxlength="150"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="city">
+                            Stadt *
+                        </label>
+
+                        <input
+                            id="city"
+                            name="city"
+                            type="text"
+                            maxlength="100"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="zip">
+                            PLZ *
+                        </label>
+
+                        <input
+                            id="zip"
+                            name="zip"
+                            type="text"
+                            maxlength="20"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="country">
+                            Land
+                        </label>
+
+                        <input
+                            id="country"
+                            name="country"
+                            type="text"
+                            value="Deutschland"
+                            maxlength="60"
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="form-section">
+
+                <h2>📝 Zusätzliche Informationen</h2>
+
+                <textarea
+                    id="notes"
+                    name="notes"
+                    maxlength="2000"
+                    placeholder="Weitere Informationen zur Bestellung..."
+                ></textarea>
+
+            </div>
+
+            <div class="checkbox">
+
+                <label>
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required
+                    >
+
+                    Ich bestätige, dass die angegebenen Daten
+                    korrekt sind.
+                </label>
+
+            </div>
+
+            <button
+                type="submit"
+                id="submitButton"
+                class="button full"
+            >
+                BESTELLUNG ABSENDEN
+            </button>
+
+            <div id="orderMessage"></div>
+
+        </form>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 S1NNEX INDUSTRIES</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
