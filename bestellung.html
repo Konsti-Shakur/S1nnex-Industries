@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bestellung | S1NNEX INDUSTRIES</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            S1NNEX INDUSTRIES
+        </a>
+
+        <nav>
+
+            <a href="index.html">
+                ÜBERSICHT
+            </a>
+
+            <a href="katalog.html">
+                KATALOG
+            </a>
+
+            <a class="active" href="bestellung.html">
+                BESTELLUNG
+            </a>
+
+            <a href="intern.html">
+                INTERN
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="hero">
+
+    <div class="status">
+        ● BESTELLSYSTEM ONLINE
+    </div>
+
+    <h1>BESTELLUNG</h1>
+
+    <p>
+        NEUE MATERIALANFRAGE
+    </p>
+
+</section>
+
+
+<section class="card">
+
+    <h2>📦 Bestellung erstellen</h2>
+
+    <form id="orderForm">
+
+        <div class="form-grid">
+
+
+            <div class="form-group">
+
+                <label>
+                    Fraktion / Unternehmen *
+                </label>
+
+                <input
+                    type="text"
+                    name="company"
+                    placeholder="z. B. LSPD"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Ansprechpartner *
+                </label>
+
+                <input
+                    type="text"
+                    name="contact"
+                    placeholder="Name"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Discord Name *
+                </label>
+
+                <input
+                    type="text"
+                    name="discord"
+                    placeholder="Name / ID"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Ingame Kontakt
+                </label>
+
+                <input
+                    type="text"
+                    name="phone"
+                    placeholder="Telefonnummer">
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label>
+                    Produkt *
+                </label>
+
+                <select
+                    name="product"
+                    id="product"
+                    required>
+
+                    <option value="">
+                        Produkt auswählen
+                    </option>
+
+                    <option value="Eisenerz">
+                        Eisenerz — 80$ / Stück
+                    </option>
+
+                    <option value="Metall">
+                        Metall — 140$ / Stück
+                    </option>
+
+                    <option value="Carbon">
+                        Carbon — 120$ / Stück
+                    </option>
+
+                    <option value="Eisen">
+                        Eisen — 120$ / Stück
+                    </option>
+
+                    <option value="Aramidfasern">
+                        Aramidfasern — 80$ / Stück
+                    </option>
+
+                    <option value="Schutzplatten">
+                        Schutzplatten — 1.200$ / Stück
+                    </option>
+
+                    <option value="Hülsen">
+                        Hülsen — 80$ / Stück
+                    </option>
+
+                    <option value="Schwarzpulver">
+                        Schwarzpulver — 80$ / Stück
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Menge *
+                </label>
+
+                <input
+                    type="number"
+                    name="quantity"
+                    id="quantity"
+                    min="1"
+                    max="100000"
+                    value="1"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Lieferdatum
+                </label>
+
+                <input
+                    type="date"
+                    name="deliveryDate">
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label>
+                    Lieferort / Treffpunkt *
+                </label>
+
+                <input
+                    type="text"
+                    name="address"
+                    placeholder="z. B. Lagerhalle / GPS"
+                    required>
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label>
+                    Zusätzliche Informationen
+                </label>
+
+                <textarea
+                    name="notes"
+                    rows="6"
+                    placeholder="Weitere Informationen zur Bestellung..."></textarea>
+
+            </div>
+
+        </div>
+
+
+        <div class="order-summary">
+
+            <span>
+                Voraussichtlicher Warenwert
+            </span>
+
+            <strong id="totalPrice">
+                0$
+            </strong>
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="button submit-button">
+
+            BESTELLUNG ABSENDEN
+
+        </button>
+
+
+        <div
+            id="orderMessage"
+            class="order-message">
+        </div>
+
+    </form>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div>
+        S1NNEX INDUSTRIES
+    </div>
+
+    <span>
+        FiveM Fraktionsverwaltung · 2026
+    </span>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
